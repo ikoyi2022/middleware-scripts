@@ -1,0 +1,58 @@
+!/bin/bash
+# author ikoyi, 21,oct,2022
+echo echo "we are installing Sonarqube on centos ..."
+sudo yum update -y
+echo
+sudo yum install java-11-openjdk-devel -y
+echo
+sudo yum install java-11-openjdk -y
+echo
+sleep 2
+cd /opt
+echo
+sudo yum install wget -y
+echo
+sudo  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.3.0.51899.zip
+echo
+sudo  yum install unzip -y
+echo
+sudo unzip /opt/sonarqube-9.3.0.51899.zip
+echo
+sudo chown -R vagrant:vagrant /opt/sonarqube-9.3.0.51899
+echo
+ cd /opt/sonarqube-9.3.0.51899/bin/linux-x86-64
+echo 
+sudo firewall-cmd --permanent --add-port=9000/tcp
+echo
+sudo firewall-cmd --reload
+echo
+./sonar.sh
+!/bin/bash
+# author ikoyi, 21,oct,2022
+echo echo "we are installing Sonarqube on centos ..."
+sudo yum update -y
+echo
+sudo yum install java-11-openjdk-devel -y
+echo
+sudo yum install java-11-openjdk -y
+echo
+sleep 2
+cd /opt
+echo
+sudo yum install wget -y
+echo
+sudo  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.3.0.51899.zip
+echo
+sudo  yum install unzip -y
+echo
+sudo unzip /opt/sonarqube-9.3.0.51899.zip
+echo
+sudo chown -R vagrant:vagrant /opt/sonarqube-9.3.0.51899
+echo
+ cd /opt/sonarqube-9.3.0.51899/bin/linux-x86-64
+echo 
+sudo firewall-cmd --permanent --add-port=9000/tcp
+echo
+sudo firewall-cmd --reload
+echo
+./sonar.sh
